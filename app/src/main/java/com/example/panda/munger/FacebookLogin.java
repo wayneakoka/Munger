@@ -25,7 +25,6 @@ public class FacebookLogin extends Activity {
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.facebooklogin);
 
-
         callbackManager = CallbackManager.Factory.create();
 
         info = (TextView)findViewById(R.id.info);
@@ -34,13 +33,9 @@ public class FacebookLogin extends Activity {
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                info.setText(
-                        "User ID: "
-                                + loginResult.getAccessToken().getUserId()
-                                + "\n" +
-                                "Auth Token: "
-                                + loginResult.getAccessToken().getToken()
-                );
+                Intent i = new Intent(FacebookLogin.this, MainActivity.class);
+                startActivity(i);
+                System.out.print("Logged in");
 
             }
 

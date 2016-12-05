@@ -14,6 +14,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.panda.munger.Chat.chatFragment;
+
 public class MainActivity extends AppCompatActivity {
 
     /**
@@ -105,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
             switch(position){
                 case 0: return toolFragment.newInstance();
                 case 1 : return  homescreenFragment.newInstance();
-                case 2 : return  socialFragment.newInstance();
+                case 2 : return  chatFragment.newInstance();
 
                 // default: return MyFragment.newInstance();
                 /* It is better to use default so that it always returns a fragment and no problems would ever occur */
