@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.os.Bundle;
 
 
-
 /**
  * Created by Panda on 11/22/16.
  */

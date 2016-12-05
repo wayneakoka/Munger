@@ -23,6 +23,8 @@ import com.firebase.client.ValueEventListener;
 
 import java.util.Random;
 
+import static com.example.panda.munger.Facebook.PrefUtils.getCurrentUser;
+
 public class chatFragment extends ListFragment {
 
 
@@ -99,6 +101,7 @@ public class chatFragment extends ListFragment {
                 boolean connected = (Boolean) dataSnapshot.getValue();
                 if (connected) {
                     Toast.makeText(getActivity(), "Connected to Firebase", Toast.LENGTH_SHORT).show();
+
                 } else {
                     Toast.makeText(getActivity(), "Disconnected from Firebase", Toast.LENGTH_SHORT).show();
                 }
@@ -134,7 +137,8 @@ public class chatFragment extends ListFragment {
         String input = inputText.getText().toString();
         if (!input.equals("")) {
             // Create our 'model', a Chat object
-            Chat chat = new Chat(input, mUsername);
+            //UserPref user = new UserPref();
+            Chat chat = new Chat(input, getCurrentUser(getContext()).username);
             // Create a new, auto-generated child of that chat location, and save our chat data there
             mFirebaseRef.push().setValue(chat);
             inputText.setText("");

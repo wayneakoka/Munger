@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.panda.munger.Facebook.FacebookLogin;
+
 public class Splash extends Activity {
 
     @Override
