@@ -1,13 +1,13 @@
 package com.example.panda.munger;
 
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.widget.Button;
-import android.widget.TextView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Bundle;
+import android.widget.TextView;
 
+import static com.example.panda.munger.Facebook.PrefUtils.getCurrentUser;
 
 
 /**
@@ -24,24 +24,22 @@ public class homescreenFragment extends Fragment {
     public homescreenFragment() {
     }
 
-    Button ClickMe;
-    TextView tv;
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.homescreenfragment, container, false);
-        ClickMe = (Button) rootView.findViewById(R.id.button);
-        tv = (TextView) rootView.findViewById(R.id.textView2);
+       TextView facebookID = (TextView) rootView.findViewById(R.id.facebookID);
+       TextView username = (TextView) rootView.findViewById(R.id.username);
+       TextView gender = (TextView) rootView.findViewById(R.id.gender);
 
-        ClickMe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(tv.getText().toString().contains("Hey")){
-                    tv.setText("Yo");
-                }else tv.setText("Hey");
-            }
-        });
+
+       facebookID.setText(getCurrentUser(getContext()).facebookID);
+       username.setText(getCurrentUser(getContext()).username);
+       gender.setText(getCurrentUser(getContext()).gender);
+
+        //profilePictureView.setPresetSize(ProfilePictureView.LARGE);
+        // profilePictureView.setProfileId(getCurrentUser(getContext()).facebookID);
+        // rootView.setVisibility(View.VISIBLE);
+
         return rootView;
     }
 

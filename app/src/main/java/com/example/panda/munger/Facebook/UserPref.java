@@ -13,21 +13,6 @@ public class UserPref {
     public UserPref(){
     }
 
-    public String getUsername()  {
-        return username;
-        }
-    public String getfacebookID()  {
-        return facebookID;
-    }
-    public String getgender()  {
-        return gender;
-    }
-
-    public UserPref (String username, String facebookID, String gender){
-        this.username = username;
-        this.facebookID = facebookID;
-        this.gender = gender;
-    }
 
 
 }

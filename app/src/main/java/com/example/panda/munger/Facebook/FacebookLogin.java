@@ -56,9 +56,9 @@ public class FacebookLogin extends Activity {
                                 Log.e("response: ", response + "");
                                 try {
                                     user = new UserPref();
-                                    user.facebookID = object.getString("id").toString();
-                                    user.username = object.getString("name").toString();
-                                    user.gender = object.getString("gender").toString();
+                                    user.facebookID = object.getString("id");
+                                    user.username = object.getString("name");
+                                    user.gender = object.getString("gender");
                                     PrefUtils.setCurrentUser(user,FacebookLogin.this);
 
                                 }catch (Exception e){
