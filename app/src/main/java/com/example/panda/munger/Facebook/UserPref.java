@@ -13,6 +13,8 @@ public class UserPref {
     public UserPref(){
     }
 
-
+    public String getUser() {
+        return  username;
+    }
 
 }

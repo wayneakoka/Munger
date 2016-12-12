@@ -2,16 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.panda.munger">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.example.panda.munger.Chat.ChatApplication"
+        android:name=".SampleApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,12 +24,18 @@
             android:name=".MainActivity"
             android:label="@string/app_name" />
         <activity android:name=".Facebook.FacebookLogin" />
-        <activity android:name="com.facebook.FacebookActivity"
-            android:configChanges=
-                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
+        <activity android:name=".Event.PostActivity" />
+        <activity android:name=".Event.EventSingleActivity"></activity>
+        <activity android:name=".Event.EventFeed"></activity>
+        <activity android:name=".Marketplace.ItemFeed"></activity>
+        <activity android:name=".Marketplace.PostActivity"></activity>
+        <activity android:name=".Marketplace.ItemSingleActivity"></activity>
+        <activity android:name=".Chat.ChatActivity"></activity>
+
     </application>
-
-
 
 </manifest>

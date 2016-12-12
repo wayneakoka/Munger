@@ -111,7 +111,7 @@ public class toolFragment extends Fragment {
                 //get the extras that are returned from the intent
                 String contents = intent.getStringExtra("SCAN_RESULT");
                 String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
-                Toast toast = Toast.makeText(getActivity(), "Content:" + contents + " Format:" + format, Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(getActivity(), "You have just purchased this item ! Content:" + contents + " Format:" + format, Toast.LENGTH_LONG);
                 toast.show();
             }
         }
