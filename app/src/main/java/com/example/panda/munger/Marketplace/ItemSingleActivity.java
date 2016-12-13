@@ -45,7 +45,7 @@ public class ItemSingleActivity extends AppCompatActivity {
 
                 String event_title = (String) dataSnapshot.child("name").getValue();
                 String event_location = (String) dataSnapshot.child("price").getValue();
-                String event_datetime = (String) dataSnapshot.child("Location").getValue();
+                String event_datetime = (String) dataSnapshot.child("location").getValue();
                 String event_description = (String) dataSnapshot.child("description").getValue();
 
                 textViewSingleTitle.setText(event_title);
