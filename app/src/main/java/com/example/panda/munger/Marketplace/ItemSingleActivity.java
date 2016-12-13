@@ -30,7 +30,7 @@ public class ItemSingleActivity extends AppCompatActivity {
 
         mDatabase = FirebaseDatabase.getInstance().getReferenceFromUrl(FIREBASE_URL);
 
-        mPost_key = getIntent().getExtras().getString("event_id");
+        mPost_key = getIntent().getExtras().getString("item_id");
 
         textViewSingleTitle = (TextView) findViewById(R.id.textViewSingleTitle);
         textViewSingleLocation = (TextView) findViewById(R.id.textViewSingleLocation);
@@ -44,7 +44,7 @@ public class ItemSingleActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 String event_title = (String) dataSnapshot.child("name").getValue();
-                Integer event_location = (Integer) dataSnapshot.child("price").getValue();
+                String event_location = (String) dataSnapshot.child("price").getValue();
                 String event_datetime = (String) dataSnapshot.child("Location").getValue();
                 String event_description = (String) dataSnapshot.child("description").getValue();
 
